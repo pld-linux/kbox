@@ -8,7 +8,7 @@ Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/kbox/%{name}-%{version}.tar.gz
 # Source0-md5:	a158f1a74c0af7863f7cf7aeb89ab05f
 Source1:        http://ep09.pld-linux.org/~djurban/kde/kde-common-admin.tar.bz2
-# Source1-md5:  81e0b2f79ef76218381270960ac0f55f
+# Source1-md5:	81e0b2f79ef76218381270960ac0f55f
 URL:		http://kbox.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake

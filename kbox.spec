@@ -1,29 +1,38 @@
 Summary:	Blackbox client for kwin
 Summary(pl):	Klient Blackboksa dla kwin
 Name:		kbox
-Version:	0.1
+Version:	0.3
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/kbox/%{name}-%{version}.tar.gz
-# Source0-md5:	f7cea66964f6959b4649356c65f949fb
+# Source0-md5:	a158f1a74c0af7863f7cf7aeb89ab05f
+Source1:        http://ep09.pld-linux.org/~djurban/kde/kde-common-admin.tar.bz2
+# Source1-md5:  81e0b2f79ef76218381270960ac0f55f
 URL:		http://kbox.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	kdelibs-devel
-BuildRequires:	kdebase-devel
+BuildRequires:  kdelibs-devel <= 9:3.2.0
+BuildRequires:  kdebase-devel <= 9:3.2.0
+BuildRequires:  unsermake >= 040805
+BuildRequires:  libart_lgpl-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Blackbox client for kwin.
+Blackbox windows decorations support for kwin.
 
 %description -l pl
-Klient Blackboksa dla kwin.
+Obs³uga dekoracji okien z Blackboksa dla kwin.
 
 %prep
-%setup -q
+%setup -q -a1
+%{__sed} -i -e 's,$(TOPSUBDIRS),blackbox,g' Makefile.am
+
 
 %build
+cp -f /usr/share/automake/config.sub admin
+export UNSERMAKE=/usr/share/unsermake/unsermake
+
 %{__make} -f Makefile.cvs
 CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions"
 %configure

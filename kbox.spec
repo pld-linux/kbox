@@ -8,34 +8,39 @@ Group:		X11/Applications
 Group(de):	X11/Applikationen
 Group(pl):	X11/Aplikacje
 Source0:	http://prdownloads.sourceforge.net/kbox/%{name}-%{version}.tar.gz
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	kdelibs-devel
 BuildRequires:	kdebase-devel
-Requires:	kdebase
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define	_prefix	/usr/X11R6
+%define		_prefix		/usr/X11R6
 
 %description
+Blackbox client for kwin.
 
 %description -l pl
+Blackbox klient dla kwin.
 
 %prep
 %setup -q
 
 %build
 %{__make} -f Makefile.cvs
-./configure --prefix=%{_prefix}
-%{__make} RPM_OPT_FLAGS="%{rpmcflags}"
+CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions"
+%configure
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} prefix=$RPM_BUILD_ROOT%{_prefix} install
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc
 %attr(755,root,root) %{_libdir}/*
 %{_datadir}/apps/kwin/*

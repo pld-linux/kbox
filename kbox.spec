@@ -13,7 +13,6 @@ BuildRequires:	kdelibs-devel
 BuildRequires:	kdebase-devel
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
 
 %description
 Blackbox client for kwin.

@@ -12,10 +12,10 @@ Source1:        http://ep09.pld-linux.org/~djurban/kde/kde-common-admin.tar.bz2
 URL:		http://kbox.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:  kdelibs-devel <= 9:3.2.0
-BuildRequires:  kdebase-devel <= 9:3.2.0
-BuildRequires:  unsermake >= 040805
-BuildRequires:  libart_lgpl-devel
+BuildRequires:	kdelibs-devel <= 9:3.2.0
+BuildRequires:	kdebase-devel <= 9:3.2.0
+BuildRequires:	sed >= 4.0
+BuildRequires:	unsermake >= 040805
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -26,8 +26,8 @@ Obs³uga dekoracji okien z Blackboksa dla kwin.
 
 %prep
 %setup -q -a1
-%{__sed} -i -e 's,$(TOPSUBDIRS),blackbox,g' Makefile.am
 
+%{__sed} -i -e 's,$(TOPSUBDIRS),blackbox,g' Makefile.am
 
 %build
 cp -f /usr/share/automake/config.sub admin

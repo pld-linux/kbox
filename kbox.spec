@@ -1,11 +1,11 @@
 Summary:	Blackbox client for kwin
-Summary(pl):	Blackbox klient dla kwin
+Summary(pl):	Klient Blackboksa dla kwin
 Name:		kbox
 Version:	0.1
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://prdownloads.sourceforge.net/kbox/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/kbox/%{name}-%{version}.tar.gz
 URL:		http://kbox.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -13,12 +13,11 @@ BuildRequires:	kdelibs-devel
 BuildRequires:	kdebase-devel
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-
 %description
 Blackbox client for kwin.
 
 %description -l pl
-Blackbox klient dla kwin.
+Klient Blackboksa dla kwin.
 
 %prep
 %setup -q

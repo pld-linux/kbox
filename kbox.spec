@@ -1,5 +1,5 @@
 Summary:	Blackbox client for kwin
-Summary(pl):	Klient Blackboksa dla kwin
+Summary(pl.UTF-8):   Klient Blackboksa dla kwin
 Name:		kbox
 Version:	0.3
 Release:	1
@@ -21,8 +21,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Blackbox windows decorations support for kwin.
 
-%description -l pl
-Obs≥uga dekoracji okien z Blackboksa dla kwin.
+%description -l pl.UTF-8
+Obs≈Çuga dekoracji okien z Blackboksa dla kwin.
 
 %prep
 %setup -q -a1

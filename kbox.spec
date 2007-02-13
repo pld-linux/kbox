@@ -1,5 +1,5 @@
 Summary:	Blackbox client for kwin
-Summary(pl.UTF-8):   Klient Blackboksa dla kwin
+Summary(pl.UTF-8):	Klient Blackboksa dla kwin
 Name:		kbox
 Version:	0.3
 Release:	1
